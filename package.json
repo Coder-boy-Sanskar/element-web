@@ -44,6 +44,7 @@
         "build:bundle": "webpack --progress --mode production",
         "build:bundle-stats": "webpack --progress --mode production --json > webpack-stats.json",
         "build:module_system": "ts-node --project ./tsconfig.module_system.json module_system/scripts/install.ts",
+        "postbuild": "cp config.json dist/",
         "dist": "./scripts/package.sh",
         "start": "concurrently --kill-others-on-fail --prefix \"{time} [{name}]\" -n modules,res \"yarn build:module_system\" \"yarn build:res\" && concurrently --kill-others-on-fail --prefix \"{time} [{name}]\" -n res,element-js \"yarn start:res\" \"yarn start:js\"",
         "start:https": "concurrently --kill-others-on-fail --prefix \"{time} [{name}]\" -n res,element-js \"yarn start:res\" \"yarn start:js --server-type https\"",
