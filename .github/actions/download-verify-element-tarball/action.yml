@@ -5,7 +5,7 @@ inputs:
         description: GitHub release tag to fetch assets from.
         required: true
     out-file-path:
-        description: Path to where the webapp should be extracted to.
+        description: Path to where the dist should be extracted to.
         required: true
 runs:
     using: composite
@@ -25,13 +25,13 @@ runs:
         - name: Extract tarball
           shell: bash
           run: |
-              mkdir webapp
-              tar xvzf element-*.tar.gz -C webapp --strip-components=1
+              mkdir dist
+              tar xvzf element-*.tar.gz -C dist --strip-components=1
           working-directory: ${{ runner.temp }}/download-verify-element-tarball
 
-        - name: Move webapp to out-file-path
+        - name: Move dist to out-file-path
           shell: bash
-          run: mv ${{ runner.temp }}/download-verify-element-tarball/webapp ${{ inputs.out-file-path }}
+          run: mv ${{ runner.temp }}/download-verify-element-tarball/dist ${{ inputs.out-file-path }}
 
         - name: Clean up temp directory
           shell: bash

@@ -16,7 +16,7 @@ RUN yarn --network-timeout=200000 install
 RUN /src/scripts/docker-package.sh
 
 # Copy the config now so that we don't create another layer in the app image
-RUN cp /src/config.sample.json /src/webapp/config.json
+RUN cp /src/config.sample.json /src/dist/config.json
 
 # App
 FROM nginxinc/nginx-unprivileged:alpine-slim@sha256:ef0100e39ffe377a42ad99e1f644b78097a84f1ac60a90eac3b888196b2eeb00
@@ -27,7 +27,7 @@ USER root
 # Install jq and moreutils for sponge, both used by our entrypoints
 RUN apk add jq moreutils
 
-COPY --from=builder /src/webapp /app
+COPY --from=builder /src/dist /app
 
 # Override default nginx config. Templates in `/etc/nginx/templates` are passed
 # through `envsubst` by the nginx docker image entry point.

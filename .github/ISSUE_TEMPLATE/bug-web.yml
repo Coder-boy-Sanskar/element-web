@@ -47,10 +47,10 @@ body:
       validations:
           required: false
     - type: input
-      id: webapp-url
+      id: dist-url
       attributes:
-          label: URL for webapp
-          description: Which URL are you using to access the webapp? If a private server, tell us what version of Element Web you are using.
+          label: URL for dist
+          description: Which URL are you using to access the dist? If a private server, tell us what version of Element Web you are using.
           placeholder: e.g. develop.element.io, app.element.io
       validations:
           required: false

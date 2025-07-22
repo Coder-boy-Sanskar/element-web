@@ -26,13 +26,13 @@ function errCheck(err: unknown): void {
     }
 }
 
-// Check if webapp exists
-if (!fs.existsSync("webapp")) {
-    fs.mkdirSync("webapp");
+// Check if dist exists
+if (!fs.existsSync("dist")) {
+    fs.mkdirSync("dist");
 }
 // Check if i18n exists
-if (!fs.existsSync("webapp/i18n/")) {
-    fs.mkdirSync("webapp/i18n/");
+if (!fs.existsSync("dist/i18n/")) {
+    fs.mkdirSync("dist/i18n/");
 }
 
 const logWatch = (path: string) => {
@@ -82,7 +82,7 @@ function genLangList(langFileMap: Record<string, string>): void {
             languages[normalizedLanguage] = langFileMap[lang];
         }
     });
-    fs.writeFile("webapp/i18n/languages.json", JSON.stringify(languages, null, 4), function (err) {
+    fs.writeFile("dist/i18n/languages.json", JSON.stringify(languages, null, 4), function (err) {
         if (err) {
             console.error("Copy Error occured: " + err.message);
             throw new Error("Failed to generate languages.json");
@@ -130,7 +130,7 @@ function watchLanguage(lang: string, dest: string, langFileMap: Record<string, s
 }
 
 // language resources
-const I18N_DEST = "webapp/i18n/";
+const I18N_DEST = "dist/i18n/";
 const I18N_FILENAME_MAP = INCLUDE_LANGS.reduce<Record<string, string>>((m, l) => {
     const [filename, json] = prepareLangFile(l, I18N_DEST);
     if (!watch) {

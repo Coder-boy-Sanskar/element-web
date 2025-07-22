@@ -210,7 +210,7 @@ if __name__ == "__main__":
         "-s", "--symlink", dest="symlink", default="./latest", help=(
             "Write a symlink to this location pointing to the extracted tarball. \
             New builds will keep overwriting this symlink. The symlink will point \
-            to the webapp directory INSIDE the tarball."
+            to the dist directory INSIDE the tarball."
         )
     )
     parser.add_argument(

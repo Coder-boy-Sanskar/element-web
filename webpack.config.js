@@ -213,7 +213,7 @@ module.exports = (env, argv) => {
                 "oidc-client-ts": path.resolve(__dirname, "node_modules/oidc-client-ts"),
 
                 // Define a variable so the i18n stuff can load
-                "$webapp": path.resolve(__dirname, "webapp"),
+                "$dist": path.resolve(__dirname, "dist"),
             },
             fallback: {
                 // Mock out the NodeFS module: The opus decoder imports this wrongly.
@@ -651,7 +651,7 @@ module.exports = (env, argv) => {
                 require("@sentry/webpack-plugin").sentryWebpackPlugin({
                     release: process.env.VERSION,
                     sourcemaps: {
-                        paths: "./webapp/bundles/**",
+                        paths: "./dist/bundles/**",
                     },
                     errorHandler: (err) => {
                         console.warn("Sentry CLI Plugin: " + err.message);
@@ -677,7 +677,7 @@ module.exports = (env, argv) => {
                     {
                         from: "**",
                         context: path.resolve(__dirname, "node_modules/@element-hq/element-call-embedded/dist"),
-                        to: path.join(__dirname, "webapp", "widgets", "element-call"),
+                        to: path.join(__dirname, "dist", "widgets", "element-call"),
                     },
                     // Mobile guide assets
                     {
@@ -712,7 +712,7 @@ module.exports = (env, argv) => {
         ].filter(Boolean),
 
         output: {
-            path: path.join(__dirname, "webapp"),
+            path: path.join(__dirname, "dist"),
 
             // There are a lot of assets that need to be kept in sync with each other
             // (once a user loads one version of the app, they need to keep being served
@@ -747,7 +747,7 @@ module.exports = (env, argv) => {
 
             static: {
                 // Where to serve static assets from
-                directory: "./webapp",
+                directory: "./dist",
             },
 
             devMiddleware: {

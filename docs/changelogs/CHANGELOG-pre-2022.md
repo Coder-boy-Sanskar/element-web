@@ -3317,7 +3317,7 @@ Changes in [1.0.2-rc.1](https://github.com/vector-im/riot-web/releases/tag/v1.0.
 ====================================================================================================
 [Full Changelog](https://github.com/vector-im/riot-web/compare/v1.0.1...v1.0.2-rc.1)
 
- * Set a require alias for the webapp directory
+ * Set a require alias for the dist directory
    [\#9014](https://github.com/vector-im/riot-web/pull/9014)
  * Update from Weblate.
    [\#8973](https://github.com/vector-im/riot-web/pull/8973)

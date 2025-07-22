@@ -55,11 +55,11 @@ jobs:
 
             - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
               with:
-                  name: webapp
+                  name: dist
                   path: dist/develop.tar.gz
                   retention-days: 1
 
-            - name: Extract webapp
+            - name: Extract dist
               run: |
                   mkdir _deploy
                   tar xf dist/develop.tar.gz -C _deploy --strip-components=1

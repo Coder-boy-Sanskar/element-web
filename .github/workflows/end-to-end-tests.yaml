@@ -83,8 +83,8 @@ jobs:
             - name: Upload Artifact
               uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
               with:
-                  name: webapp
-                  path: webapp
+                  name: dist
+                  path: dist
                   retention-days: 1
 
             - name: Calculate runner variables
@@ -137,8 +137,8 @@ jobs:
             - name: 📥 Download artifact
               uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
               with:
-                  name: webapp
-                  path: webapp
+                  name: dist
+                  path: dist
 
             - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
               with:
@@ -191,7 +191,7 @@ jobs:
         if: inputs.skip != true && github.event_name == 'merge_group'
         uses: element-hq/element-modules/.github/workflows/reusable-playwright-tests.yml@main
         with:
-            webapp-artifact: webapp
+            dist-artifact: dist
 
     complete:
         name: end-to-end-tests

@@ -32,13 +32,13 @@ jobs:
               with:
                   github-token: ${{ secrets.GITHUB_TOKEN }}
                   run-id: ${{ github.event.workflow_run.id }}
-                  name: webapp-ubuntu-24.04
-                  path: webapp
+                  name: dist-ubuntu-24.04
+                  path: dist
 
             - name: 📤 Deploy to Netlify
               uses: matrix-org/netlify-pr-preview@9805cd123fc9a7e421e35340a05e1ebc5dee46b5 # v3
               with:
-                  path: webapp
+                  path: dist
                   owner: ${{ github.event.workflow_run.head_repository.owner.login }}
                   branch: ${{ github.event.workflow_run.head_branch }}
                   revision: ${{ github.event.workflow_run.head_sha }}

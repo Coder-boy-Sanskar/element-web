@@ -27,7 +27,7 @@ import SdkConfig from "./SdkConfig";
 import { ModuleRunner } from "./modules/ModuleRunner";
 
 // @ts-ignore - $webapp is a webpack resolve alias pointing to the output directory, see webpack config
-import webpackLangJsonUrl from "$webapp/i18n/languages.json";
+import webpackLangJsonUrl from "$dist/i18n/languages.json";
 
 export { normalizeLanguageKey, getNormalizedLanguageKeys } from "matrix-web-i18n";
 

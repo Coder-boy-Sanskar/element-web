@@ -3,7 +3,7 @@
 /lib
 /node_modules
 /packages/
-/webapp
+/dist
 /*.log
 yarn.lock
 electron/dist

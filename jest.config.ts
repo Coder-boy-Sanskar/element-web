@@ -25,7 +25,7 @@ const config: Config = {
         "\\.(css|scss|pcss)$": "<rootDir>/__mocks__/cssMock.js",
         "\\.(gif|png|ttf|woff2)$": "<rootDir>/__mocks__/imageMock.js",
         "\\.svg$": "<rootDir>/__mocks__/svg.js",
-        "\\$webapp/i18n/languages.json": "<rootDir>/__mocks__/languages.json",
+        "\\$dist/i18n/languages.json": "<rootDir>/__mocks__/languages.json",
         "^react$": "<rootDir>/node_modules/react",
         "^react-dom$": "<rootDir>/node_modules/react-dom",
         "^matrix-js-sdk$": "<rootDir>/node_modules/matrix-js-sdk/src",
