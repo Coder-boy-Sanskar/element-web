@@ -443,7 +443,7 @@ async function joinConference(audioInput?: string | null, videoInput?: string | 
             // https://github.com/jitsi/jitsi-meet/issues/11585
             apiLogLevels: ["warn", "error"],
         } as any,
-        jwt: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJteV9qaXRzaV9hcHAiLCJpc3MiOiJteV9qaXRzaV9hcHAiLCJzdWIiOiJqaXRzaTIueWFsLmNoYXQiLCJyb29tIjoiKiIsImNvbnRleHQiOnsidXNlciI6eyJuYW1lIjoiU2Fuc2thciJ9fSwiZXhwIjoxNzUzMjA0ODAwfQ.t83ILMRrz8FqsZvtsGbXcAK_7FgcvPmRc8_r285LL1M",
+        jwt: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJteV9qaXRzaV9hcHAiLCJpc3MiOiJteV9qaXRzaV9hcHAiLCJzdWIiOiJqaXRzaTIueWFsLmNoYXQiLCJyb29tIjoiKiIsImNvbnRleHQiOnsidXNlciI6eyJuYW1lIjoiU2Fuc2thciJ9fSwiZXhwIjoxNzUzODU4NTh9.qcShlUAz7vArWyof4Ht7IpHw2qNE-wgOXdR20Oa_BSQ",
 
         lang: mapLanguage(normalizeLanguage(language)),
     };
